@@ -6,5 +6,7 @@ body{
     margin-top: 150px;
     display: grid;
     grid-template-columns:auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto  ;
-    gap: 5px;
+}
+.red{
+    background-color: red;
 }
