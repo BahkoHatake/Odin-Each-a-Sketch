@@ -7,8 +7,14 @@
     <title>Odin-Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 <body>
+    <h1>Etch-a-Sketch!</h1>
     <div class="display"></div>
+    <div class="controls">
+        <label for="pixels">Pixels:</label>
+        <input type="range" name="pixels" id="pixels" max="64" min="8" value="16">
+    </div>
 </body>
 </html>
