@@ -12,8 +12,11 @@ function createGrid(pixelsNum){
 function changeColor(){
    const elements=document.querySelectorAll(".element")
    elements.forEach(element=>element.addEventListener("mouseover",()=>{
-   element.classList.add("red")
+   element.classList.add("color")
 }))}
+function restartGrid(){
+   grid.innerHTML = ''
+}
 
 createGrid(256)
 
@@ -21,9 +24,9 @@ changeColor()
 
 const pixels=document.querySelector("#pixels")
 pixels.addEventListener("change",()=>{
-   grid.innerHTML = ''
+   restartGrid()
    let x=pixels.value
-   set(x)
+   setCssVariable(x)
    createGrid(x*x)
    changeColor()
 })
@@ -31,4 +34,26 @@ pixels.addEventListener("change",()=>{
 const r =document.querySelector(":root")
 function setCssVariable(c){
    r.style.setProperty("--pixels",`repeat(${c},auto)`)
+}
+
+const color=document.querySelector("#color")
+color.addEventListener("change",()=>{
+   const elements1=document.querySelectorAll(".element");
+   elements1.forEach(element=>element.addEventListener("mouseover",()=>{
+      element.style.backgroundColor=`${color.value}`
+   }))})
+
+
+const clear=document.querySelector(".clear")
+clear.addEventListener("click",()=>{
+   restartGrid()
+   y=getValueOfPix().slice(7,9)
+   setCssVariable(y)
+   createGrid(y*y)
+   changeColor()
+})
+
+function getValueOfPix(){
+   let rs = getComputedStyle(r)
+   return rs.getPropertyValue("--pixels")
 }

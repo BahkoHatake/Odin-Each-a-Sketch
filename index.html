@@ -13,8 +13,19 @@
     <h1>Etch-a-Sketch!</h1>
     <div class="display"></div>
     <div class="controls">
-        <label for="pixels">Pixels:</label>
-        <input type="range" name="pixels" id="pixels" max="64" min="8" value="16">
+        <div class="c">
+            <label for="pixels">Pixels:</label>
+            <input type="range" name="pixels" id="pixels" max="64" min="8" value="16">
+        </div>
+        <div class="c">    
+            <label for="color">Pick color:</label>
+            <input type="color" name="color" id="color" value="#ffc600">
+        </div>
+    </div>
+    <div class="controls">
+        <div class="c">
+            <button class="clear">Clear</button>
+        </div>
     </div>
 </body>
 </html>
